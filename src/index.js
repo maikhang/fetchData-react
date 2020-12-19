@@ -2,16 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './tailwind.css';
 // import HelloWorld from './components/helloWord';
-import Count from './components/Count';
 // import Test from './components/test';
+import Count from './components/Count';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Count name="" />
-    <Footer />
+
+    <Router>
+      <Header />
+      <Count name="" />
+      <Switch>
+        <Route exact path="/">
+          <h1>This is Homepage</h1>
+        </Route>
+        <Route path="/product">
+          <h1>This is Product page</h1>
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
