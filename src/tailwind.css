@@ -10922,6 +10922,15 @@ video {
   transition-duration: 1000ms;
 }
 
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5 solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

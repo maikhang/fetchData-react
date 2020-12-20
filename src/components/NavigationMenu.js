@@ -16,7 +16,7 @@ export default function NavigationMenu(props) {
                 </li>
                 <li>
                     <Link
-                        to="/product"
+                        to="/product/:id"
                         className="text-blue-500 cursor-pointer py-3 border-b block pl-3"
                         onClick={props.closeMenu}
                     >
