@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
+import { useAxiosGet } from '../Hooks/HttpRequests'
 
 export default function Product() {
     const { id } = useParams();
-    console.log(id);
     const url = `https://5fdf0c80eca1780017a30800.mockapi.io/product/${id}`;
-    const [product, setProduct] = useState({
-        loading: false,
-        data: null
-    });
+    let product = useAxiosGet(url);
 
     let content = null;
-
-    useEffect(() => {
-        setProduct({
-            loading: true,
-            data: null
-        });
-        axios.get(url)
-            .then(response => {
-                setProduct({
-                    loading: false,
-                    data: response.data
-                })
-            });
-    }, [url]);
 
     if (product.loading) {
         content = <Loader></Loader>
     }
+
+    if (product.error) {
+        content = <p>Somethings went wrong, pls try again</p>
+    }
+
 
     if (product.data) {
         content =

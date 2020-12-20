@@ -17,23 +17,22 @@ import Product from './Views/Product';
 
 ReactDOM.render(
   <React.StrictMode>
-
-    <Router>
-      <Header />
-      <Count name="" />
-      <div className="p-3">
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/product/:id">
-            <Product />
-          </Route>
-        </Switch>
-      </div>
-      <Footer />
-    </Router>
-
+    <div className="relative pb-10 min-h-screen">
+      <Router>
+        <Header />
+        <div className="p-3">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/product/:id">
+              <Product />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -23,12 +23,6 @@ export default function NavigationMenu(props) {
                         Product
                     </Link>
                 </li>
-                {/* <li>
-                    <Link to="/aboutus" className="text-blue-500">About Us</Link>
-                </li>
-                <li>
-                    <Link to="/contact" className="text-blue-500">Contact</Link>
-                </li> */}
             </ul>
         </div>
     )
